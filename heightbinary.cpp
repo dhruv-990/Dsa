@@ -44,11 +44,30 @@ int height(Node *root){
     return max(leftht , rightht)+1;
 }
 
+void klevel(Node *root , int k){
+    if(root==NULL){
+        return;
+    }
+
+    if(k==1){
+        cout<< root->data <<" ";
+        return ;
+
+    }
+
+    klevel(root->left , k-1);
+    klevel(root->right , k-1);
+
+}
+
 int main() {
     vector<int> vs = {1, 2, -1, -1, 3, -1, -1};  // Proper tree
 
     Node* root = buildTree(vs);
     cout<< "Height of the tree "<<height(root)<<endl;
+
+    klevel(root , 2);
+
 
 
     
