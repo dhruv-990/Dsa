@@ -7,8 +7,9 @@ using namespace std;
 void sumvector(vector<int> &vs){
     for(int i=1 ; i<vs.size() ; i++){
         vs[i]+= vs[i-1];
-        return;
+        
     }
+    return;
 }
 
 int main() {
@@ -27,7 +28,7 @@ int main() {
     sumvector(vs);
 
     for(int j=0 ; j<vs.size() ; j++){
-        cout<<vs[j];
+        cout<<vs[j]<<" ";
     }
 
     return 0;
