@@ -9,16 +9,16 @@ bool checkvector(vector<int>& vs) {
     }
 
     int prefix_sum = 0;
-    for (int i = 0; i < vs.size() - 1; i++) {  // split *between* elements
+    for (int i = 0; i < vs.size() - 1; i++) { 
         prefix_sum += vs[i];
         int suffix_sum = total_sum - prefix_sum;
 
         if (prefix_sum == suffix_sum) {
-            return true; // we found a valid partition
+            return true; 
         }
     }
 
-    return false; // no valid partition found
+    return false;
 }
 
 int main() {
